@@ -4,8 +4,8 @@ include_once 'partials/header.php';
 
 $id = $_GET['id'];
  
-$show = mysqli_query($conn, "SELECT * FROM posts join users ON users.id = posts.createdBy where posts.id=$id");
-$comments = mysqli_query($conn, "SELECT * FROM posts join users ON users.id = posts.createdBy where posts.id=$id");
+$show = mysqli_query($conn, "SELECT * FROM posts join users ON users.id_user = posts.createdBy where posts.id=$id");
+$comments = mysqli_query($conn, "SELECT * FROM comments WHERE postId=$id");
 ?>
 <div class="row">
     <div class="posts col-lg-8 col-md-10 mx-auto">
@@ -19,7 +19,9 @@ $comments = mysqli_query($conn, "SELECT * FROM posts join users ON users.id = po
     <?php endforeach; ?>
     <h3>Comments :</h3>
     <?php foreach($comments as $item): ?>
-    
+    <div class="col col-s-12">
+        <?php echo $item['comment']; ?>
+    </div>
     <?php endforeach; ?>
     </div>
 </div>
