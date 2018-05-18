@@ -1,7 +1,7 @@
 <?php
 include_once 'config.php';
 include_once 'partials/header.php';
-$posts = mysqli_query($conn, "SELECT * FROM posts join users ON users.id = posts.createdBy");
+$posts = mysqli_query($conn, "SELECT * FROM posts join users ON users.id_user = posts.createdBy");
 ?>
 <div class="row">
     <div class="posts col-lg-8 col-md-10 mx-auto">
