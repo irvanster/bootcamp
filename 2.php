@@ -28,5 +28,4 @@ if ($username=="" || $email=="" || $phone_number=="")
 
 }
 
-
 ?>
