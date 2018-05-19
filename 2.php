@@ -21,7 +21,7 @@ if ($username=="" || $email=="" || $phone_number=="")
     }elseif (preg_match('/[A-Z]/', $email)) {
         echo ' email invalid';
     }
-    if(!preg_match('/^[0-9 +-]*$/', $phone_number)){
+    if(!preg_match('/^[0-9 +]*$/', $phone_number)){
         echo 'not valid';
     }
 }
